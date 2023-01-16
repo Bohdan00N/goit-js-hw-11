@@ -26,14 +26,18 @@ btnSearch.addEventListener('click', e => {
         Notiflix.Notify.success(
           `Hooray! We found ${foundData.totalHits} images.`
         );
-        if (foundData.hits.length > 40) {
-          btnLoadMore.style.display = 'block';
-        }
-
+        // if (foundData.hits.length > 40) {
+        //   btnLoadMore.style.display = 'block';
+        // }
+        btnLoadMore.style.display = 'block';
+        if (foundData.hits.length < 40) {
+          btnLoadMore.style.display = 'none';}
+        // console.log(foundData.hits.length)
         gallerySimpleLightbox.refresh();
       }
     });
   }
+  
 });
 
 btnLoadMore.addEventListener('click', () => {
