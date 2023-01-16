@@ -26,7 +26,10 @@ btnSearch.addEventListener('click', e => {
         Notiflix.Notify.success(
           `Hooray! We found ${foundData.totalHits} images.`
         );
-        btnLoadMore.style.display = 'block';
+        if (foundData.hits.length > 39) {
+          btnLoadMore.style.display = 'block';
+        }
+
         gallerySimpleLightbox.refresh();
       }
     });
