@@ -26,7 +26,7 @@ btnSearch.addEventListener('click', e => {
         Notiflix.Notify.success(
           `Hooray! We found ${foundData.totalHits} images.`
         );
-        if (foundData.hits.length > 39) {
+        if (foundData.hits.length > 40) {
           btnLoadMore.style.display = 'block';
         }
 
