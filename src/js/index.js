@@ -31,13 +31,13 @@ btnSearch.addEventListener('click', e => {
         // }
         btnLoadMore.style.display = 'block';
         if (foundData.hits.length < 40) {
-          btnLoadMore.style.display = 'none';}
+          btnLoadMore.style.display = 'none';
+        }
         // console.log(foundData.hits.length)
         gallerySimpleLightbox.refresh();
       }
     });
   }
-  
 });
 
 btnLoadMore.addEventListener('click', () => {
@@ -55,6 +55,9 @@ btnLoadMore.addEventListener('click', () => {
         `Hooray! We found ${foundData.totalHits} images.`
       );
       btnLoadMore.style.display = 'block';
+      if (40 * pageNumber >= foundData.totalHits) {
+        btnLoadMore.style.display = 'none';
+      }
     }
   });
 });
